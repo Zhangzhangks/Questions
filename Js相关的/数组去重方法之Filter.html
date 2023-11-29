@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const array = [
+            { name: '已填埋', data: Array(7), type: 'bar', stack: 'Ad', },
+            { name: '新开河道', data: Array(7), type: 'bar', stack: 'Ad' },
+            { name: '已填埋', data: Array(7), type: 'bar', stack: 'Ad', },
+            { name: '新开河道', data: Array(6), type: 'bar', stack: 'Ad', },
+            { name: '已填埋', data: Array(7), type: 'bar', stack: 'Ad', },
+            { name: '已填埋', data: Array(7), type: 'bar', stack: 'Ad', },
+            { name: '新开河道', data: Array(6), type: 'bar', stack: 'Ad', },
+
+        ];
+        const uniqueArray = array.filter(
+            (obj, index, self) => {
+                return index === self.findIndex(
+                    (t) => t.name === obj.name
+                )
+            }
+        )
+
+        console.log(uniqueArray);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>给父级元素设置百分比图片为100px不显示完全的问题</title>
+</head>
+<body>
+<p>
+    主要是因为当父级元素渲染时echart的图表拿不到对应的父级的宽高所以需要加一个v-if控制比如:
+</p>
+
+<!-- 弹出框 -->
+ <Drawer title="统计分析" :closable="false" v-model="drawerOpen" :inner="true" :transfer="false" width="50%">
+      <div class="ecahrts">
+        <!-- 图表 -->
+        <Chartyears14To18 :hdztList="hdztList14" v-if="hdztList14.length > 0 && drawerOpen" />
+
+      </div>
+    </Drawer>
+
+<!--
+    css样式
+    .ecahrts {
+  width: 100%;
+  height: 100%;
+} -->
+</body>
+</html>
